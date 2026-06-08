@@ -7,7 +7,10 @@ export default function Home() {
 
       {/* NAVBAR */}
     <nav className="flex items-center justify-between px-10 py-5 bg-white border-b border-gray-100 sticky top-0 z-50">
+  <div className="flex items-center gap-2">
+  <img src="/logo.svg" alt="Listly AI" width="32" height="32" />
   <span className="text-2xl font-bold text-orange-500 tracking-tight">Listly AI</span>
+</div>
   <div className="flex items-center gap-6">
     <a href="#how" className="text-gray-500 text-sm hover:text-gray-900">Comment ca marche</a>
     <a href="#pricing" className="text-gray-500 text-sm hover:text-gray-900">Tarifs</a>
