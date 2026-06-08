@@ -7,7 +7,7 @@ export default function SuccessPage() {
           Paiement réussi !
         </h1>
         <p className="text-gray-500 mb-8">
-          Bienvenue sur Listify Pro. Tu as maintenant acces a des generations illimitees.
+          Bienvenue sur Listly Pro. Tu as maintenant acces a des generations illimitees.
         </p>
         <a href="/generate" className="bg-orange-500 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-orange-600">
           Commencer a generer

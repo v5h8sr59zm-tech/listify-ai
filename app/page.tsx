@@ -77,7 +77,7 @@ export default function Home() {
           <div className="grid grid-cols-2 gap-8">
             <div className="bg-gray-800 rounded-2xl p-8 border border-gray-700">
               <span className="text-3xl mb-5 block">😤</span>
-              <h3 className="font-bold text-white text-lg mb-4">Sans Listify</h3>
+              <h3 className="font-bold text-white text-lg mb-4">Sans Listly</h3>
               <ul className="space-y-3 text-sm">
                 <li className="flex items-start gap-3 text-gray-400"><span className="text-red-400 mt-0.5">✗</span>Tu passes 1h à rédiger une fiche</li>
                 <li className="flex items-start gap-3 text-gray-400"><span className="text-red-400 mt-0.5">✗</span>Ton titre n'apparait pas dans les recherches</li>
@@ -87,7 +87,7 @@ export default function Home() {
             </div>
             <div className="bg-orange-500 rounded-2xl p-8">
               <span className="text-3xl mb-5 block">🚀</span>
-              <h3 className="font-bold text-white text-lg mb-4">Avec Listify</h3>
+              <h3 className="font-bold text-white text-lg mb-4">Avec Listly</h3>
               <ul className="space-y-3 text-sm">
                 <li className="flex items-start gap-3 text-orange-100"><span className="text-white mt-0.5">✓</span>Fiche complète générée en 30 secondes</li>
                 <li className="flex items-start gap-3 text-orange-100"><span className="text-white mt-0.5">✓</span>Titre optimisé SEO pour Amazon et Etsy</li>
@@ -136,7 +136,7 @@ export default function Home() {
                 {[1,2,3,4,5].map(i => <span key={i} className="text-orange-400">★</span>)}
               </div>
               <p className="text-gray-700 text-sm leading-relaxed mb-6">
-                "J'ai multiplié mes vues par 3 sur Etsy en deux semaines. Mes anciennes fiches étaient catastrophiques sans que je le sache. Listify m'a ouvert les yeux."
+                "J'ai multiplié mes vues par 3 sur Etsy en deux semaines. Mes anciennes fiches étaient catastrophiques sans que je le sache. Listly m'a ouvert les yeux."
               </p>
               <div className="flex items-center gap-3">
                 <div className="w-9 h-9 rounded-full bg-orange-200 flex items-center justify-center text-orange-700 font-bold text-sm">SL</div>
@@ -168,7 +168,7 @@ export default function Home() {
                 {[1,2,3,4,5].map(i => <span key={i} className="text-orange-400">★</span>)}
               </div>
               <p className="text-gray-700 text-sm leading-relaxed mb-6">
-                "Je suis nulle en rédaction et en SEO. Listify fait tout à ma place. Mes produits remontent dans les résultats Etsy depuis que je l'utilise."
+                "Je suis nulle en rédaction et en SEO. Listly fait tout à ma place. Mes produits remontent dans les résultats Etsy depuis que je l'utilise."
               </p>
               <div className="flex items-center gap-3">
                 <div className="w-9 h-9 rounded-full bg-amber-200 flex items-center justify-center text-amber-700 font-bold text-sm">AB</div>
@@ -200,7 +200,7 @@ export default function Home() {
                 {[1,2,3,4,5].map(i => <span key={i} className="text-orange-400">★</span>)}
               </div>
               <p className="text-gray-700 text-sm leading-relaxed mb-6">
-                "J'ai testé d'autres outils avant Listify. Aucun ne comprend aussi bien les spécificités d'Etsy. Les tags générés sont vraiment pertinents."
+                "J'ai testé d'autres outils avant Listly. Aucun ne comprend aussi bien les spécificités d'Etsy. Les tags générés sont vraiment pertinents."
               </p>
               <div className="flex items-center gap-3">
                 <div className="w-9 h-9 rounded-full bg-green-200 flex items-center justify-center text-green-700 font-bold text-sm">MV</div>
@@ -216,7 +216,7 @@ export default function Home() {
                 {[1,2,3,4,5].map(i => <span key={i} className="text-white">★</span>)}
               </div>
               <p className="text-orange-100 text-sm leading-relaxed mb-6">
-                "Depuis que j'utilise Listify, mon taux de conversion a augmenté de 40%. Les descriptions sont tellement meilleures que ce que j'écrivais."
+                "Depuis que j'utilise Listly, mon taux de conversion a augmenté de 40%. Les descriptions sont tellement meilleures que ce que j'écrivais."
               </p>
               <div className="flex items-center gap-3">
                 <div className="w-9 h-9 rounded-full bg-white flex items-center justify-center text-orange-500 font-bold text-sm">JD</div>
@@ -303,7 +303,7 @@ export default function Home() {
                 <span className="text-orange-500 text-xl">+</span>
               </summary>
               <p className="text-gray-500 text-sm mt-4 leading-relaxed">
-                Oui. Listify utilise l'IA Claude d'Anthropic, entraînée sur des milliers de fiches produits performantes. Elle connaît les règles SEO spécifiques d'Amazon et Etsy — longueur des titres, structure des bullet points, densité des mots-clés — et les applique automatiquement.
+                Oui. Listly utilise l'IA Claude d'Anthropic, entraînée sur des milliers de fiches produits performantes. Elle connaît les règles SEO spécifiques d'Amazon et Etsy — longueur des titres, structure des bullet points, densité des mots-clés — et les applique automatiquement.
               </p>
             </details>
 
@@ -329,11 +329,11 @@ export default function Home() {
 
             <details className="bg-gray-50 rounded-2xl p-6 group border border-gray-100">
               <summary className="font-semibold text-gray-900 cursor-pointer flex justify-between items-center">
-                Listify fonctionne-t-il pour toutes les catégories de produits ?
+                Listly fonctionne-t-il pour toutes les catégories de produits ?
                 <span className="text-orange-500 text-xl">+</span>
               </summary>
               <p className="text-gray-500 text-sm mt-4 leading-relaxed">
-                Oui. Que tu vendes des bijoux faits main, de l'électronique, des vêtements ou de la décoration, Listify s'adapte à ta catégorie et génère des fiches pertinentes et optimisées.
+                Oui. Que tu vendes des bijoux faits main, de l'électronique, des vêtements ou de la décoration, Listly s'adapte à ta catégorie et génère des fiches pertinentes et optimisées.
               </p>
             </details>
 
@@ -343,7 +343,7 @@ export default function Home() {
                 <span className="text-orange-500 text-xl">+</span>
               </summary>
               <p className="text-gray-500 text-sm mt-4 leading-relaxed">
-                Listify génère des fiches en français et en anglais. D'autres langues seront disponibles prochainement.
+                Listly génère des fiches en français et en anglais. D'autres langues seront disponibles prochainement.
               </p>
             </details>
           </div>
@@ -354,7 +354,7 @@ export default function Home() {
       <section className="bg-gradient-to-br from-orange-500 to-amber-500 px-10 py-24 text-center">
         <h2 className="text-4xl font-bold text-white mb-6">Pret a vendre plus ?</h2>
         <p className="text-orange-100 text-lg mb-10 max-w-lg mx-auto">
-          Rejoins des centaines de vendeurs qui ont transforme leurs fiches produits avec Listify.
+          Rejoins des centaines de vendeurs qui ont transforme leurs fiches produits avec Listly.
         </p>
         <a href="/generate" className="inline-block bg-white text-orange-500 px-12 py-5 rounded-2xl text-lg font-bold hover:bg-orange-50 shadow-xl">
           Commencer gratuitement
