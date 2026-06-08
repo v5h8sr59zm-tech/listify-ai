@@ -8,7 +8,7 @@ export default function LoginPage() {
   return (
     <main className="min-h-screen bg-gray-900 flex items-center justify-center p-8">
       <div className="bg-white rounded-2xl p-10 w-full max-w-md text-center shadow-2xl">
-        <a href="/" className="text-2xl font-bold text-orange-500 block mb-2">Listify AI</a>
+        <a href="/" className="text-2xl font-bold text-orange-500 block mb-2">Listly AI</a>
         <h1 className="text-2xl font-bold text-gray-900 mb-2">Connexion</h1>
         <p className="text-gray-500 text-sm mb-10">
           Connecte-toi pour acceder a tes generations et ton abonnement

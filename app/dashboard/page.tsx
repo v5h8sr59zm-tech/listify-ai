@@ -25,7 +25,7 @@ function DashboardContent() {
   return (
     <main className="min-h-screen bg-white">
       <nav className="flex items-center justify-between px-10 py-5 bg-white border-b border-gray-100 sticky top-0 z-50">
-        <a href="/" className="text-2xl font-bold text-orange-500 tracking-tight">Listify AI</a>
+        <a href="/" className="text-2xl font-bold text-orange-500 tracking-tight">Listly AI</a>
         <NavbarAuth />
       </nav>
 

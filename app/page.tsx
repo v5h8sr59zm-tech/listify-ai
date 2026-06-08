@@ -7,7 +7,7 @@ export default function Home() {
 
       {/* NAVBAR */}
     <nav className="flex items-center justify-between px-10 py-5 bg-white border-b border-gray-100 sticky top-0 z-50">
-  <span className="text-2xl font-bold text-orange-500 tracking-tight">Listify AI</span>
+  <span className="text-2xl font-bold text-orange-500 tracking-tight">Listly AI</span>
   <div className="flex items-center gap-6">
     <a href="#how" className="text-gray-500 text-sm hover:text-gray-900">Comment ca marche</a>
     <a href="#pricing" className="text-gray-500 text-sm hover:text-gray-900">Tarifs</a>
@@ -364,8 +364,8 @@ export default function Home() {
       {/* FOOTER */}
       <footer className="bg-gray-900 px-10 py-10 border-t border-gray-800">
         <div className="max-w-5xl mx-auto flex items-center justify-between">
-          <span className="text-orange-500 font-bold text-xl">Listify AI</span>
-          <p className="text-gray-500 text-sm">2025 Listify AI · Tous droits réservés</p>
+          <span className="text-orange-500 font-bold text-xl">Listly AI</span>
+          <p className="text-gray-500 text-sm">2025 Listly AI · Tous droits réservés</p>
           <div className="flex gap-6 text-gray-500 text-sm">
             <a href="#" className="hover:text-white">Confidentialité</a>
             <a href="#" className="hover:text-white">CGU</a>

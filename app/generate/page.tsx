@@ -97,7 +97,7 @@ export default function GeneratePage() {
 
       {/* NAVBAR */}
       <nav className="flex items-center justify-between px-8 py-4 border-b border-gray-100 sticky top-0 bg-white z-50">
-        <a href="/" className="text-xl font-bold text-orange-500 tracking-tight">Listify AI</a>
+        <a href="/" className="text-xl font-bold text-orange-500 tracking-tight">Listly AI</a>
         <div className="flex items-center gap-4">
           <div className="flex items-center gap-2 bg-orange-50 border border-orange-100 px-4 py-1.5 rounded-full">
             <div className="h-2 w-2 rounded-full bg-orange-500 animate-pulse"></div>
