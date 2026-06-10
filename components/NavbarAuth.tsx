@@ -25,6 +25,10 @@ function NavbarAuthInner() {
               <p className="text-gray-400 text-xs truncate">{session.user?.email}</p>
             </div>
             <a href="/dashboard" className="flex items-center gap-2 px-4 py-3 text-gray-700 hover:bg-gray-50 text-sm">Mes générations</a>
+            <a href="/competitor" className="flex items-center gap-2 px-4 py-3 text-gray-700 hover:bg-gray-50 text-sm">
+  Analyse concurrente
+  <span className="ml-auto bg-orange-100 text-orange-500 text-xs font-bold px-2 py-0.5 rounded-full">Pro</span>
+</a>
             <button onClick={() => signOut({ callbackUrl: "/" })} className="w-full text-left px-4 py-3 text-red-500 hover:bg-red-50 text-sm rounded-b-xl">
               Se déconnecter
             </button>
