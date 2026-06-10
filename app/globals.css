@@ -1,26 +1,135 @@
 @import "tailwindcss";
 
+/* ─── Reset overflow mobile ─────────────────────────────────────── */
+html {
+  overflow-x: clip;
+  max-width: 100%;
+}
+
+body {
+  overflow-x: clip;
+  max-width: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ─── Variables ─────────────────────────────────────────────────── */
 :root {
   --background: #ffffff;
   --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+/* ─── Scroll reveal ──────────────────────────────────────────────
+   Les éléments partent invisibles et montent quand ils entrent
+   dans le viewport. JS ajoute .visible via IntersectionObserver.
+   ──────────────────────────────────────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 500ms var(--ease-out), transform 500ms var(--ease-out);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger : chaque enfant .reveal-child attend un peu plus */
+.stagger > *:nth-child(1) { transition-delay: 0ms; }
+.stagger > *:nth-child(2) { transition-delay: 60ms; }
+.stagger > *:nth-child(3) { transition-delay: 120ms; }
+.stagger > *:nth-child(4) { transition-delay: 180ms; }
+.stagger > *:nth-child(5) { transition-delay: 240ms; }
+.stagger > *:nth-child(6) { transition-delay: 300ms; }
+
+/* ─── Boutons — feedback physique ───────────────────────────────── */
+.btn-primary {
+  transition: background-color 150ms ease, transform 100ms ease, box-shadow 150ms ease;
+}
+.btn-primary:hover {
+  transform: translateY(-1px);
+}
+.btn-primary:active {
+  transform: scale(0.97);
+}
+
+/* ─── Hover cards ────────────────────────────────────────────────── */
+@media (hover: hover) and (pointer: fine) {
+  .card-hover {
+    transition: transform 200ms var(--ease-out), box-shadow 200ms var(--ease-out);
+  }
+  .card-hover:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.10);
+  }
+}
+
+/* ─── Navbar scroll shadow ───────────────────────────────────────── */
+.navbar-scrolled {
+  box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+}
+
+/* ─── Hero badge pulse ───────────────────────────────────────────── */
+.badge-pulse::before {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #f97316;
+  margin-right: 6px;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.85); }
+}
+
+/* ─── Compteur animé ─────────────────────────────────────────────── */
+@keyframes countUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.stat-number {
+  animation: countUp 600ms var(--ease-out) both;
+}
+.stat-number:nth-child(1) { animation-delay: 100ms; }
+.stat-number:nth-child(2) { animation-delay: 200ms; }
+.stat-number:nth-child(3) { animation-delay: 300ms; }
+
+/* ─── Details/summary ────────────────────────────────────────────── */
+details summary::-webkit-details-marker { display: none; }
+details[open] .faq-icon { transform: rotate(45deg); }
+.faq-icon {
+  transition: transform 200ms var(--ease-out);
+  display: inline-block;
+}
+
+/* ─── Focus ──────────────────────────────────────────────────────── */
+:focus-visible {
+  outline: 2px solid #f97316;
+  outline-offset: 2px;
+}
+
+/* ─── Reduced motion ─────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .card-hover,
+  .btn-primary,
+  .badge-pulse::before {
+    animation: none;
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
 }

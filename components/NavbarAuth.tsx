@@ -4,24 +4,19 @@ import { SessionProvider, useSession, signOut } from "next-auth/react";
 function NavbarAuthInner() {
   const { data: session, status } = useSession();
 
-  if (status === "loading") {
-    return (
-      <div className="flex items-center gap-3">
-        <a href="/login" className="text-gray-500 text-sm font-semibold">Connexion</a>
-        <a href="/generate" className="bg-orange-500 text-white px-5 py-2 rounded-lg font-semibold text-sm">Essayer gratuitement</a>
-      </div>
-    );
-  }
+  if (status === "loading") return null;
 
   if (session) {
     const initials = session.user?.name
       ? session.user.name.split(" ").map((n: string) => n[0]).join("").toUpperCase().slice(0, 2)
       : "?";
     return (
-      <div className="flex items-center gap-3">
-        <a href="/generate" className="bg-orange-500 text-white px-5 py-2 rounded-lg font-semibold hover:bg-orange-600 text-sm">Générer</a>
+      <div className="flex items-center gap-2">
+        <a href="/generate" className="hidden md:block bg-orange-500 text-white px-4 py-2 rounded-lg font-semibold hover:bg-orange-600 text-sm">
+          Générer
+        </a>
         <div className="relative group">
-          <button className="w-9 h-9 rounded-full bg-orange-500 text-white font-bold text-sm flex items-center justify-center hover:bg-orange-600">
+          <button className="w-9 h-9 rounded-full bg-orange-500 text-white font-bold text-sm flex items-center justify-center">
             {initials}
           </button>
           <div className="absolute right-0 mt-2 w-48 bg-white rounded-xl shadow-xl border border-gray-100 opacity-0 group-hover:opacity-100 transition-all pointer-events-none group-hover:pointer-events-auto z-50">
@@ -40,9 +35,13 @@ function NavbarAuthInner() {
   }
 
   return (
-    <div className="flex items-center gap-3">
-      <a href="/login" className="text-gray-500 text-sm hover:text-gray-900 font-semibold">Connexion</a>
-      <a href="/generate" className="bg-orange-500 text-white px-5 py-2 rounded-lg font-semibold hover:bg-orange-600 text-sm">Essayer gratuitement</a>
+    <div className="flex items-center gap-2">
+      <a href="/login" className="hidden md:block text-gray-500 text-sm hover:text-gray-900 font-semibold">
+        Connexion
+      </a>
+      <a href="/generate" className="bg-orange-500 text-white px-4 py-2 rounded-lg font-semibold hover:bg-orange-600 text-sm">
+        Essayer
+      </a>
     </div>
   );
 }
