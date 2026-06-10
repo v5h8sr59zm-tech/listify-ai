@@ -22,6 +22,35 @@ export default function GeneratePage() {
   const [loading, setLoading] = useState(false);
   const [freeUsed, setFreeUsed] = useState(0);
   const [copied, setCopied] = useState<string | null>(null);
+  const [imagePreview, setImagePreview] = useState<string | null>(null);
+  const [analyzingImage, setAnalyzingImage] = useState(false);
+
+  const handleImageUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+  const file = e.target.files?.[0];
+  if (!file) return;
+
+  const reader = new FileReader();
+  reader.onload = async (event) => {
+    const base64 = event.target?.result as string;
+    const imageBase64 = base64.split(",")[1];
+    const mediaType = file.type;
+
+    setImagePreview(base64);
+    setAnalyzingImage(true);
+
+    const res = await fetch("/api/analyze-image", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ imageBase64, mediaType }),
+    });
+
+    const data = await res.json();
+    if (data.productName) setProductName(data.productName);
+    if (data.features) setFeatures(data.features);
+    setAnalyzingImage(false);
+  };
+  reader.readAsDataURL(file);
+};
 
   const handleSubmit = async () => {
     if (!productName || !features) return;
@@ -159,6 +188,38 @@ export default function GeneratePage() {
               </div>
             </div>
 
+            {/* Upload photo */}
+<div className="mb-6">
+  <label className="text-gray-500 text-xs font-semibold uppercase tracking-widest block mb-3">
+    Analyser une photo
+  </label>
+  <label className="flex flex-col items-center justify-center w-full h-32 border-2 border-dashed border-gray-200 rounded-xl cursor-pointer hover:border-orange-400 hover:bg-orange-50 transition-all">
+    {analyzingImage ? (
+      <div className="flex flex-col items-center gap-2">
+        <svg className="animate-spin h-6 w-6 text-orange-500" viewBox="0 0 24 24" fill="none">
+          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"/>
+          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z"/>
+        </svg>
+        <p className="text-orange-500 text-sm font-semibold">Analyse en cours...</p>
+      </div>
+    ) : imagePreview ? (
+      <div className="flex flex-col items-center gap-2">
+        <img src={imagePreview} alt="preview" className="h-20 w-20 object-cover rounded-lg" />
+        <p className="text-gray-400 text-xs">Cliquer pour changer</p>
+      </div>
+    ) : (
+      <div className="flex flex-col items-center gap-2">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-gray-300">
+          <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M17 8l-5-5-5 5M12 3v12"/>
+        </svg>
+        <p className="text-gray-400 text-sm">Uploader une photo de ton produit</p>
+        <p className="text-gray-300 text-xs">L'IA remplit les champs automatiquement</p>
+      </div>
+    )}
+    <input type="file" accept="image/*" className="hidden" onChange={handleImageUpload} />
+  </label>
+</div>
+            
             {/* Catégorie */}
             <div className="mb-6">
               <label className="text-gray-500 text-xs font-semibold uppercase tracking-widest block mb-3">Catégorie</label>
