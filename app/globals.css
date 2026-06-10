@@ -133,3 +133,62 @@ details[open] .faq-icon { transform: rotate(45deg); }
     transform: none;
   }
 }
+/* ── Reveal animation ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Stagger children ── */
+.stagger .reveal:nth-child(1) { transition-delay: 0ms; }
+.stagger .reveal:nth-child(2) { transition-delay: 80ms; }
+.stagger .reveal:nth-child(3) { transition-delay: 160ms; }
+.stagger .reveal:nth-child(4) { transition-delay: 240ms; }
+.stagger .reveal:nth-child(5) { transition-delay: 320ms; }
+.stagger .reveal:nth-child(6) { transition-delay: 400ms; }
+
+/* ── Card hover ── */
+.card-hover {
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.card-hover:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+}
+
+/* ── Button primary ── */
+.btn-primary {
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(249, 115, 22, 0.35);
+}
+
+/* ── Badge pulse ── */
+.badge-pulse::before {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background: #f97316;
+  border-radius: 50%;
+  margin-right: 8px;
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.8); }
+}
+
+/* ── FAQ icon rotate ── */
+details[open] .faq-icon { transform: rotate(45deg); }
+.faq-icon { transition: transform 0.2s ease; display: inline-block; }
+
+/* ── Navbar scrolled ── */
+.navbar-scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.08); }

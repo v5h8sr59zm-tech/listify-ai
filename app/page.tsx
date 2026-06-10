@@ -212,6 +212,123 @@ export default function Home() {
           </div>
         </section>
 
+{/* AVANT / APRÈS */}
+<section className="bg-white px-4 md:px-10 py-16 md:py-24">
+  <div className="max-w-5xl mx-auto">
+    <div className="reveal text-center mb-10 md:mb-14">
+      <h2 className="text-2xl md:text-3xl font-black text-gray-900 mb-3 tracking-tight">La différence est immédiate</h2>
+      <p className="text-gray-500 text-sm">Même produit. Résultat incomparable.</p>
+    </div>
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 reveal">
+      {/* Avant */}
+      <div className="rounded-2xl border-2 border-red-100 bg-red-50 p-6">
+        <div className="flex items-center gap-2 mb-4">
+          <span className="bg-red-100 text-red-500 text-xs font-bold px-3 py-1 rounded-full">✕ Sans Listly</span>
+        </div>
+        <div className="space-y-3">
+          <div>
+            <p className="text-gray-400 text-xs font-semibold uppercase tracking-wider mb-1">Titre</p>
+            <p className="text-gray-600 text-sm">Bague argent femme</p>
+          </div>
+          <div>
+            <p className="text-gray-400 text-xs font-semibold uppercase tracking-wider mb-1">Description</p>
+            <p className="text-gray-500 text-xs leading-relaxed">Belle bague en argent. Faite à la main. Disponible en plusieurs tailles.</p>
+          </div>
+          <div>
+            <p className="text-gray-400 text-xs font-semibold uppercase tracking-wider mb-1">Bullet points</p>
+            <ul className="space-y-1">
+              {["En argent", "Fait main", "Joli design"].map(b => (
+                <li key={b} className="text-gray-400 text-xs flex gap-2"><span className="text-red-300">•</span>{b}</li>
+              ))}
+            </ul>
+          </div>
+          <div className="bg-red-100 rounded-xl p-3 mt-2">
+            <p className="text-red-500 text-xs font-semibold">👎 Résultat : invisible dans les recherches</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Après */}
+      <div className="rounded-2xl border-2 border-green-100 bg-green-50 p-6">
+        <div className="flex items-center gap-2 mb-4">
+          <span className="bg-green-100 text-green-600 text-xs font-bold px-3 py-1 rounded-full">✓ Avec Listly</span>
+        </div>
+        <div className="space-y-3">
+          <div>
+            <p className="text-gray-400 text-xs font-semibold uppercase tracking-wider mb-1">Titre SEO</p>
+            <p className="text-gray-900 text-sm font-semibold leading-snug">Bague Femme Argent 925 Minimaliste · Anneau Fin Empilable · Cadeau Bijou Fait Main</p>
+          </div>
+          <div>
+            <p className="text-gray-400 text-xs font-semibold uppercase tracking-wider mb-1">Description</p>
+            <p className="text-gray-600 text-xs leading-relaxed">Élégante bague en argent sterling 925 au design épuré, parfaite pour s'empiler avec vos autres bijoux. Fabriquée à la main avec soin...</p>
+          </div>
+          <div>
+            <p className="text-gray-400 text-xs font-semibold uppercase tracking-wider mb-1">Bullet points</p>
+            <ul className="space-y-1">
+              {["Argent 925 certifié, hypoallergénique", "Design épuré, empilable avec vos bijoux", "Livraison soignée dans une boîte cadeau"].map(b => (
+                <li key={b} className="text-gray-700 text-xs flex gap-2"><span className="text-green-500">✦</span>{b}</li>
+              ))}
+            </ul>
+          </div>
+          <div className="bg-green-100 rounded-xl p-3 mt-2">
+            <p className="text-green-600 text-xs font-semibold">👍 Résultat : visible, cliqué, vendu</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{/* POURQUOI PAS CHATGPT */}
+<section className="bg-gray-900 px-4 md:px-10 py-16 md:py-24">
+  <div className="max-w-4xl mx-auto">
+    <div className="reveal text-center mb-10 md:mb-14">
+      <h2 className="text-2xl md:text-3xl font-black text-white mb-3 tracking-tight">Pourquoi ne pas utiliser ChatGPT ?</h2>
+      <p className="text-gray-500 text-sm">Bonne question. Voilà la vraie réponse.</p>
+    </div>
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 stagger">
+      {[
+        { icon: "🎯", title: "Optimisé pour l'e-commerce", desc: "Listly connaît les règles SEO exactes d'Amazon et Etsy — longueur des titres, format des bullet points, densité des mots-clés. ChatGPT ne sait pas ça." },
+        { icon: "⚡", title: "30 secondes, pas 10 minutes", desc: "Avec ChatGPT tu dois rédiger ton prompt, itérer, reformater. Avec Listly tu entres ton produit et tu récupères une fiche prête à coller." },
+        { icon: "📋", title: "Format prêt à l'emploi", desc: "Listly génère directement dans le format exact requis par chaque plateforme. Aucun reformatage nécessaire." },
+        { icon: "🔒", title: "Spécialisé = meilleur résultat", desc: "Un outil dédié à une tâche précise fait toujours mieux qu'un outil généraliste. C'est vrai pour les couteaux, c'est vrai pour l'IA." },
+      ].map(({ icon, title, desc }) => (
+        <div key={title} className="reveal card-hover bg-gray-800 rounded-2xl p-6 border border-gray-700">
+          <span className="text-2xl mb-3 block">{icon}</span>
+          <h4 className="font-bold text-white text-base mb-2">{title}</h4>
+          <p className="text-gray-400 text-sm leading-relaxed">{desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+{/* CAS D'USAGE */}
+<section className="bg-amber-50 px-4 md:px-10 py-16 md:py-24">
+  <div className="max-w-4xl mx-auto">
+    <div className="reveal text-center mb-10 md:mb-14">
+      <h2 className="text-2xl md:text-3xl font-black text-gray-900 mb-3 tracking-tight">Pour qui est Listly ?</h2>
+      <p className="text-gray-500 text-sm">Toute plateforme, tout produit, tout niveau</p>
+    </div>
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 stagger">
+      {[
+        { platform: "Etsy", emoji: "🧶", color: "bg-orange-100 text-orange-700", desc: "Vendeurs artisans qui veulent que leurs créations soient trouvées. Tags optimisés, descriptions chaleureuses, titres naturels." },
+        { platform: "Amazon", emoji: "📦", color: "bg-blue-100 text-blue-700", desc: "Vendeurs FBA qui gèrent des dizaines de produits. Bullet points au format exact Amazon, titres riches en mots-clés." },
+        { platform: "Shopify", emoji: "🛍️", color: "bg-green-100 text-green-700", desc: "Boutiques en ligne indépendantes qui veulent des descriptions qui convertissent et un SEO naturel." },
+        { platform: "Vinted Pro", emoji: "👗", color: "bg-purple-100 text-purple-700", desc: "Revendeurs pro qui postent des dizaines d'articles par semaine. Descriptions rapides, détaillées et attractives." },
+      ].map(({ platform, emoji, color, desc }) => (
+        <div key={platform} className="reveal card-hover bg-white rounded-2xl p-6 shadow-sm border border-amber-100">
+          <div className="flex items-center gap-3 mb-3">
+            <span className="text-2xl">{emoji}</span>
+            <span className={`text-xs font-bold px-3 py-1 rounded-full ${color}`}>{platform}</span>
+          </div>
+          <p className="text-gray-600 text-sm leading-relaxed">{desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
         {/* PRICING */}
         <section id="pricing" className="bg-gray-900 px-4 md:px-10 py-16 md:py-24">
           <div className="max-w-4xl mx-auto text-center">
