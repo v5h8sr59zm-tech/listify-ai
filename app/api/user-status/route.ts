@@ -1,4 +1,5 @@
 import { getServerSession } from "next-auth";
+import { authOptions } from "@/lib/auth";
 import { Redis } from "@upstash/redis";
 
 const redis = new Redis({
@@ -7,7 +8,7 @@ const redis = new Redis({
 });
 
 export async function GET() {
-  const session = await getServerSession();
+  const session = await getServerSession(authOptions);
 
   if (!session?.user?.email) {
     return Response.json({ freeUsed: 0, plan: "free" });
